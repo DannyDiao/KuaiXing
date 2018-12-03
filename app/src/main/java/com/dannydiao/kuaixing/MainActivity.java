@@ -62,11 +62,12 @@ public class MainActivity extends AppCompatActivity{
         mainMap = (MapView)findViewById(R.id.main_map);
         mainMap.onCreate(savedInstanceState);
 
+        //绑定aMap控件
         if (aMap == null) {
             aMap = mainMap.getMap();
         }
 
-
+        //高德SDK中设置地图样式的方法
         MyLocationStyle myLocationStyle;
         myLocationStyle = new MyLocationStyle();
         myLocationStyle.interval(2000);
@@ -74,17 +75,13 @@ public class MainActivity extends AppCompatActivity{
         aMap.getUiSettings().setMyLocationButtonEnabled(true);
         aMap.setMyLocationStyle(myLocationStyle);//设置定位蓝点的Style
         aMap.setMyLocationEnabled(true);// 设置为true表示启动显示定位蓝点，false表示隐藏定位蓝点并不进行定位，默认是false。
-         aMap.showIndoorMap(true);
-         UISetiings();
-
-
-
-
-         aMap.animateCamera( CameraUpdateFactory.zoomTo(15));
+        aMap.showIndoorMap(true);
+        UISetiings();
+        aMap.animateCamera( CameraUpdateFactory.zoomTo(15));
 
 
          //监听FAB按钮实现开/关实时路况信息
-        CHANGE_TRAFFIC_FLAG = 0;
+         CHANGE_TRAFFIC_FLAG = 0;
          FloatingActionButton fab_traffic;
          fab_traffic = findViewById(R.id.fab_change_traffic);
          fab_traffic.setOnClickListener(new View.OnClickListener() {
@@ -138,7 +135,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
 
-
+    //封装UISettings到方法中
     public void UISetiings(){
         uiSettings = aMap.getUiSettings();
 
@@ -146,7 +143,7 @@ public class MainActivity extends AppCompatActivity{
         uiSettings.setScaleControlsEnabled(true);
     }
 
-
+    //监听权限请求结果
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode){
@@ -161,7 +158,7 @@ public class MainActivity extends AppCompatActivity{
                 }
         }
     }
-
+    //封装finish()方法
     public void Finish(){
         finish();
     }

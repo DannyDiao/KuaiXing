@@ -23,7 +23,6 @@
             app:borderWidth="0dp"
             app:elevation="5dp"
             app:fabSize="normal"
-
             app:pressedTranslationZ="10dp"
             app:rippleColor="#b2dfdb" />
 
@@ -41,7 +40,6 @@
             app:borderWidth="0dp"
             app:elevation="5dp"
             app:fabSize="normal"
-
             app:pressedTranslationZ="10dp"
             app:rippleColor="#545454"
             />
