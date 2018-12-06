@@ -11,6 +11,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -40,6 +42,12 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //设置主题为NoActionBar样式
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getSupportActionBar().hide();
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
         //请求权限
         if((ContextCompat.checkSelfPermission(this,
@@ -102,6 +110,8 @@ public class MainActivity extends AppCompatActivity{
 
              }
          });
+
+         Toast.makeText(MainActivity.this,"这是快行0.1.3版本",Toast.LENGTH_LONG).show();
 
          //监听FAB按钮实现切换地图样式
         FloatingActionButton fab_button;
