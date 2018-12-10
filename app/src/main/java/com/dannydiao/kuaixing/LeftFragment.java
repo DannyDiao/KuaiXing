@@ -26,6 +26,27 @@ public class LeftFragment extends Fragment {
     int CHANGE_STYLE_FLAG = 0;
     int CHANGE_TRAFFIC_FLAG = 0;
 
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+    public LeftFragment() {
+        // Required empty public constructor
+    }
+
+    public static LeftFragment newInstance(String param1, String param2) {
+        LeftFragment fragment = new LeftFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+
+
     public void UISetiings(){
         uiSettings = aMap.getUiSettings();
 

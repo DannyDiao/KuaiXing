@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -16,20 +19,29 @@ public class MainActivityNav extends AppCompatActivity {
 
 
 
+    FragmentManager fragmentManager = getSupportFragmentManager();
+
+    LeftFragment leftFragment = LeftFragment.newInstance("Context","Context");
+    Fragment currentFragment = leftFragment;
+    RightFragment rightFragment = RightFragment.newInstance("Context","Context");
+    MiddleFragment middleFragment = MiddleFragment.newInstance("Context","Context");
+
+
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
-
+                case R.id.nav_map:
+                    showFragment(leftFragment);
                     return true;
-                case R.id.navigation_dashboard:
-
+                case R.id.nav_route:
+                    showFragment(middleFragment);
                     return true;
-                case R.id.navigation_notifications:
-
+                case R.id.nav_about:
+                    showFragment(rightFragment);
                     return true;
             }
             return false;
@@ -59,6 +71,9 @@ public class MainActivityNav extends AppCompatActivity {
         }
 
         Toast.makeText(MainActivityNav.this,"这是快行" + Util.getVerName(this) + "版本" ,Toast.LENGTH_LONG).show();
+        FragmentTransaction transaction1 = fragmentManager.beginTransaction();
+        transaction1.add(R.id.fragment_layout,leftFragment);
+        transaction1.commit();
     }
 
     @Override
@@ -79,5 +94,31 @@ public class MainActivityNav extends AppCompatActivity {
     public void Finish(){
         finish();
     }
+
+    private void showFragment(Fragment fg){
+
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        //如果之前没有添加过
+        if(!fg.isAdded()){
+            transaction
+                    .add(R.id.fragment_layout,fg)
+                    .hide(currentFragment);
+        }else{
+            transaction
+                    .hide(currentFragment)
+                    .show(fg);
+        }
+
+        //全局变量，记录当前显示的fragment
+        currentFragment = fg;
+        //transaction.addToBackStack(null);
+        transaction.commit();
+
+    }
+
+
+
+
 
 }
