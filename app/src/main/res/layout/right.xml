@@ -5,7 +5,11 @@
     >
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="这是未来放关于页面的地方... ..."/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/markdown"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="60dp"/>
 </LinearLayout>
