@@ -1,5 +1,9 @@
 # 快行
 > 快行是一个面向算法的路线推荐软件，基于我们设计的先进的巢芯算法.
+
+<img src='http://i1.bvimg.com/671625/0022838ebe5efccd.png' width = "30%" height = "30%"> 　　　　　 <img src='http://i1.bvimg.com/671625/c791b8f081d501e2.png' width = "30%" height = "30%">
+
+
 ## 更新日志
 #### **Version 0.2.2**　　　12月10日
 + **完成关于页面的设计,基于开源框架RichText**
