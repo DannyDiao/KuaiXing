@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.amap.api.maps.MapView
+
+        android:id="@+id/main_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_change_traffic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:src="@drawable/change_traffic"
+            app:backgroundTint="#009688"
+            app:borderWidth="0dp"
+            app:elevation="5dp"
+            app:fabSize="normal"
+            app:pressedTranslationZ="10dp"
+            app:rippleColor="#b2dfdb" />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="80dp"
+            android:clickable="true"
+            android:src="@drawable/change_style"
+            app:backgroundTint="#7093DB"
+            app:borderWidth="0dp"
+            app:elevation="5dp"
+            app:fabSize="normal"
+            app:pressedTranslationZ="10dp"
+            app:rippleColor="#545454" />
+    </com.amap.api.maps.MapView>
+
+
+
+
+
+
+
+
+</LinearLayout>
