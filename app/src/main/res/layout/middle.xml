@@ -4,8 +4,4 @@
     android:orientation="vertical"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="这是未来放路线规划模块的地方... ..."/>
 </LinearLayout>

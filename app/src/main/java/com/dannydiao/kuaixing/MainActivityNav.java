@@ -15,6 +15,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class MainActivityNav extends AppCompatActivity {
 
 
@@ -25,6 +27,8 @@ public class MainActivityNav extends AppCompatActivity {
     Fragment currentFragment = leftFragment;
     RightFragment rightFragment = RightFragment.newInstance("Context","Context");
     MiddleFragment middleFragment = MiddleFragment.newInstance("Context","Context");
+
+    static String[] roadStringResult = new String[300];
 
 
 
@@ -74,6 +78,7 @@ public class MainActivityNav extends AppCompatActivity {
         FragmentTransaction transaction1 = fragmentManager.beginTransaction();
         transaction1.add(R.id.fragment_layout,leftFragment);
         transaction1.commit();
+
     }
 
     @Override
@@ -93,6 +98,11 @@ public class MainActivityNav extends AppCompatActivity {
 
     public void Finish(){
         finish();
+    }
+
+    public static void setRoadString(List<String> roadList){
+        String[] roadString = roadList.toArray(new String[roadList.size()]);
+        roadStringResult = roadString;
     }
 
     private void showFragment(Fragment fg){
