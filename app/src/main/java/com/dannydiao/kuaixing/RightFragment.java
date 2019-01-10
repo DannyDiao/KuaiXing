@@ -21,7 +21,24 @@ public class RightFragment extends Fragment {
     private String mParam2;
     private static final String MARKDOWN = "# 快行\n" +
             "> 快行是一个面向算法的路线推荐软件，基于我们设计的先进的巢芯算法.\n" +
+            "\n" +
+            "<img src='http://thyrsi.com/t6/637/1545196790x2728306557.png' width = \"30%\" height = \"30%\"> 　　　　　 <img src='http://thyrsi.com/t6/637/1545196820x2728306557.png' width = \"30%\" height = \"30%\">\n" +
+            "\n" +
+            "\n" +
             "## 更新日志\n" +
+            "#### **Version 0.4.0**　　　1月10日\n" +
+            "+ **成功实现了路线规划的基本功能**\n" +
+            "\n" +
+            "<img src='http://thyrsi.com/t6/653/1547111627x2890174106.png' width = \"25%\" height = \"25%\">\n" +
+            "#   \n" +
+            "\n" +
+            "\n" +
+            "#### **Version 0.3.0**　　　12月19日\n" +
+            "+ **打通了高德路线规划SDK的通路，成功获取到数据**\n" +
+            "\n" +
+            "<img src='http://thyrsi.com/t6/637/1545196971x2728306557.png' width = \"25%\" height = \"25%\">\n" +
+            "#   \n" +
+            "\n" +
             "#### **Version 0.2.2**　　　12月10日\n" +
             "+ **完成关于页面的设计,基于开源框架RichText**\n" +
             "#   \n" +
@@ -46,13 +63,13 @@ public class RightFragment extends Fragment {
             "---\n" +
             "#### **未来计划：**\n" +
             "  #### 1.在12.30前完成Beta版本\n" +
-            "  #### 2.完成路线页面和About页面\n" +
+            "  #### 2.完成路线页面\n" +
             "  #   \n" +
             "---\n" +
             "#### 本项目Github地址： [DannyDiao/KuaiXing](https://github.com/DannyDiao/KuaiXing)\n" +
             "\n" +
-            "#### 当前版本：0.2.2\n" +
-            "#### 编译于2018/12/10 23:43\n";
+            "#### 当前版本：0.4.0\n" +
+            "#### 编译于2019/01/10 17:14\n";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
