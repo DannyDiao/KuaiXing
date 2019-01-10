@@ -2,31 +2,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_margin="10dp"
     >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:text="起点"
+        android:textStyle="bold"
         android:textSize="20dp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/from_input"/>
+        android:id="@+id/from_input"
+        android:background="@drawable/editsharp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:textStyle="bold"
         android:text="终点"
         android:textSize="20dp"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/to_input"/>
+        android:id="@+id/to_input"
+        android:background="@drawable/editsharp"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="搜索"
-        android:id="@+id/search_button"/>
+        android:id="@+id/search_button"
+        android:layout_marginTop="10dp"/>
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/spin_kit"
+        style="@style/SpinKitView.Wave"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_gravity="center"
+        app:SpinKit_Color="#5677fc"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.amap.api.services.core.LatLonPoint;
@@ -29,6 +30,7 @@ import com.amap.api.services.route.DriveStep;
 import com.amap.api.services.route.RideRouteResult;
 import com.amap.api.services.route.RouteSearch;
 import com.amap.api.services.route.WalkRouteResult;
+import com.github.ybq.android.spinkit.style.Wave;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +47,8 @@ public class MiddleFragment extends Fragment {
     EditText from_input;
     EditText to_input;
     int continue_flag = 0;
+    ProgressBar progressBar;
+
 
     public void setFrom(LatLonPoint from) {
         this.from = from;
@@ -59,7 +63,7 @@ public class MiddleFragment extends Fragment {
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            progressBar.setVisibility(View.VISIBLE);
             String from_text = from_input.getText().toString();
             String to_text = to_input.getText().toString();
 
@@ -78,6 +82,11 @@ public class MiddleFragment extends Fragment {
             });
             GeocodeQuery from_geoquery = new GeocodeQuery(from_text,"028");
             from_geocodeSearch.getFromLocationNameAsyn(from_geoquery);
+            try {
+                Thread.sleep(1000);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
 
 
 
@@ -123,6 +132,7 @@ public class MiddleFragment extends Fragment {
 
 
                             setRoad(roadList);
+                            progressBar.setVisibility(View.GONE);
 
 
 
@@ -165,6 +175,10 @@ public class MiddleFragment extends Fragment {
         from_input = view.findViewById(R.id.from_input);
         to_input = view.findViewById(R.id.to_input);
         Button search_button = view.findViewById(R.id.search_button);
+        progressBar = (ProgressBar)view.findViewById(R.id.spin_kit);
+        Wave wave = new Wave();
+        progressBar.setIndeterminateDrawable(wave);
+        progressBar.setVisibility(View.GONE);
 
         search_button.setOnClickListener(onClickListener);
 
